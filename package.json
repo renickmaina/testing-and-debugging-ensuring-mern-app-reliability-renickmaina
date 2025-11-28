@@ -1,0 +1,22 @@
+{
+  "name": "mern-bug-tracker",
+  "version": "1.0.0",
+  "description": "A comprehensive bug tracking application with testing and debugging",
+  "scripts": {
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "client:dev": "cd client && npm run dev",
+    "test": "npm run test:server && npm run test:client",
+    "test:server": "cd server && npm test",
+    "test:client": "cd client && npm test",
+    "test:unit": "concurrently \"cd server && npm run test:unit\" \"cd client && npm run test:unit\"",
+    "test:integration": "concurrently \"cd server && npm run test:integration\" \"cd client && npm run test:integration\"",
+    "test:e2e": "echo 'E2E tests skipped - Cypress not installed'",
+    "test:coverage": "concurrently \"cd server && npm run test:coverage\" \"cd client && npm run test:coverage\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
